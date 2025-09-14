@@ -1,30 +1,36 @@
-// src/services/apiService.js
-
 import axios from 'axios'
 
-// Configura a URL base da sua API. Altere se for diferente.
 const apiClient = axios.create({
-  baseURL: 'http://localhost:3000/api', // Endereço do seu back-end
+  baseURL: 'http://localhost:3000/api',
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },
 })
 
 export default {
-  // Listar todos os alunos
+  // === Auth Methods ===
+  login(credentials) {
+    return apiClient.post('/login', credentials)
+  },
+  logout() {
+    return apiClient.post('/logout')
+  },
+  getMe() {
+    return apiClient.get('/me')
+  },
+
+  // === Student Methods ===
   getAllStudents() {
     return apiClient.get('/students')
   },
-  // Criar um novo aluno
   createStudent(studentData) {
     return apiClient.post('/students', studentData)
   },
-  // Atualizar um aluno existente pelo RA
-  updateStudent(ra, studentData) {
-    return apiClient.put(`/students/${ra}`, studentData)
+  updateStudent(id, studentData) {
+    return apiClient.put(`/students/${id}`, studentData)
   },
-  // Excluir um aluno pelo RA
-  deleteStudent(ra) {
-    return apiClient.delete(`/students/${ra}`)
+  deleteStudent(id) {
+    return apiClient.delete(`/students/${id}`)
   },
 }
