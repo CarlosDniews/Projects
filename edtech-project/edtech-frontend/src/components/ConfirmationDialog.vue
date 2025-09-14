@@ -12,19 +12,27 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="grey-darken-1" text @click="$emit('cancel')">Cancelar</v-btn>
-        <v-btn color="red-darken-1" variant="tonal" @click="$emit('confirm')">Confirmar</v-btn>
+        <v-btn color="grey-darken-1" text @click="$emit('cancel')">{{
+          t('confirmationDialog.buttons.cancel')
+        }}</v-btn>
+        <v-btn color="red-darken-1" variant="tonal" @click="$emit('confirm')">{{
+          t('confirmationDialog.buttons.confirm')
+        }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 defineProps({
   show: Boolean,
   title: {
     type: String,
-    default: 'Confirmar Ação',
+    default: 'Confirm Action',
   },
   message: {
     type: String,
