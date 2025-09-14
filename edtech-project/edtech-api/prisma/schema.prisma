@@ -7,7 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Student model
 model Student {
   id    Int     @id @default(autoincrement())
   ra    String  @unique 

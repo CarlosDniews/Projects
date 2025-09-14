@@ -1,7 +1,6 @@
-// hashPassword.js
 const bcrypt = require("bcryptjs");
 
-const plainPassword = "admin"; // <-- Escolha a senha que você quer usar
+const plainPassword = "admin";
 
 bcrypt.genSalt(10, (err, salt) => {
   bcrypt.hash(plainPassword, salt, (err, hash) => {

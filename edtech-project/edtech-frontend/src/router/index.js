@@ -25,8 +25,6 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
-  // A função checkAuth verifica se existe um cookie de sessão válido no backend
-  // A verificação só é necessária uma vez por carregamento da página
   if (authState.user === null) {
     await authService.checkAuth()
   }
@@ -35,15 +33,10 @@ router.beforeEach(async (to, from, next) => {
   const requiresAuth = to.meta.requiresAuth
 
   if (requiresAuth && !isAuthenticated) {
-    // Se a rota exige login e o usuário NÃO está autenticado,
-    // redireciona para a página de login.
     next('/login')
   } else if (to.path === '/login' && isAuthenticated) {
-    // Se o usuário JÁ está autenticado e tenta acessar a página de login,
-    // redireciona para a página principal.
     next('/')
   } else {
-    // Em todos os outros casos, permite a navegação.
     next()
   }
 })

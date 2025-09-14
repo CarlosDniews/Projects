@@ -1,5 +1,5 @@
 import { reactive } from 'vue'
-import api from '@/services/apiService' // O mesmo apiService de sempre
+import api from '@/services/apiService'
 
 export const authState = reactive({
   user: null,
@@ -9,7 +9,6 @@ export const authState = reactive({
 export const authService = {
   async login(credentials) {
     try {
-      // Agora chamamos o método que existe no objeto "api"
       const response = await api.login(credentials)
       authState.user = response.data.user
       authState.isAuthenticated = true
