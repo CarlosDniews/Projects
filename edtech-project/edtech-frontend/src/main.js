@@ -1,31 +1,42 @@
-// src/main.js (versão final com tudo)
-
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createPinia } from 'pinia'
 
-// Vuetify ... (código anterior)
+import { createI18n } from 'vue-i18n'
+import en from './locales/en.json'
+import pt from './locales/pt.json'
+
+import router from './router'
+
+import Toast from 'vue-toastification'
+import 'vue-toastification/dist/index.css'
+
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-// ... imports do vuetify
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-// Toastification
-import Toast from 'vue-toastification' // 1. Importe o Toast
-import 'vue-toastification/dist/index.css' // 2. Importe o CSS
+import '@mdi/font/css/materialdesignicons.css'
+
+const i18n = createI18n({
+  locale: 'pt',
+  fallbackLocale: 'en',
+  messages: { en, pt },
+  legacy: false,
+})
 
 const vuetify = createVuetify({
-  /* ... opções ... */
+  components,
+  directives,
+  icons: {
+    defaultSet: 'mdi',
+  },
 })
-const pinia = createPinia()
+
 const app = createApp(App)
 
+app.use(router)
 app.use(vuetify)
-app.use(pinia)
-app.use(Toast, {
-  // 3. Adicione o Toast com opções (opcional)
-  transition: 'Vue-Toastification__bounce',
-  maxToasts: 5,
-  newestOnTop: true,
-})
+app.use(i18n)
+app.use(Toast)
 
 app.mount('#app')

@@ -1,0 +1,48 @@
+{
+  "app": {
+    "academicModule": "Módulo Acadêmico",
+    "students": "Alunos"
+  },
+  "studentList": {
+    "title": "Alunos",
+    "registerStudent": "Cadastrar Aluno",
+    "searchPlaceholder": "Pesquisar por Nome, RA ou CPF...",
+    "loading": "Carregando dados...",
+    "noData": "Nenhum aluno cadastrado",
+    "headers": {
+      "ra": "RA",
+      "name": "Nome",
+      "email": "E-mail",
+      "cpf": "CPF",
+      "actions": "Ações"
+    }
+  },
+  "studentForm": {
+    "registerTitle": "Cadastrar Aluno",
+    "editTitle": "Editar Aluno",
+    "labels": {
+      "name": "Nome",
+      "email": "E-mail",
+      "ra": "RA",
+      "cpf": "CPF"
+    },
+    "placeholders": {
+      "name": "Informe o nome completo do aluno",
+      "email": "Informe um e-mail válido",
+      "ra": "Informe o registro acadêmico",
+      "cpf": "Informe o número do CPF"
+    },
+    "buttons": {
+      "cancel": "Cancelar",
+      "save": "Salvar"
+    }
+  },
+  "confirmationDialog": {
+    "title": "Confirmar Exclusão",
+    "message": "Tem certeza que deseja excluir o aluno {name}?",
+    "buttons": {
+      "cancel": "Cancelar",
+      "confirm": "Confirmar"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "app": {
+    "academicModule": "Academic Module",
+    "students": "Students"
+  },
+  "studentList": {
+    "title": "Students",
+    "registerStudent": "Register Student",
+    "searchPlaceholder": "Search by Name, RA or CPF...",
+    "loading": "Loading data...",
+    "noData": "No students registered",
+    "headers": {
+      "ra": "RA",
+      "name": "Name",
+      "email": "Email",
+      "cpf": "CPF",
+      "actions": "Actions"
+    }
+  },
+  "studentForm": {
+    "registerTitle": "Register Student",
+    "editTitle": "Edit Student",
+    "labels": {
+      "name": "Name",
+      "email": "E-mail",
+      "ra": "RA",
+      "cpf": "CPF"
+    },
+    "placeholders": {
+      "name": "Enter the student's full name",
+      "email": "Enter a valid email",
+      "ra": "Enter the academic record",
+      "cpf": "Enter the CPF number"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "save": "Save"
+    }
+  },
+  "confirmationDialog": {
+    "title": "Confirm Delete",
+    "message": "Are you sure you want to delete the student {name}?",
+    "buttons": {
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    }
+  }
+}
