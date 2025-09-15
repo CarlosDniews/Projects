@@ -8,7 +8,7 @@ Foi escolhido a Arquitetura pra Aplicação Full-Stack Desacoplada, composta por
 Vantagens:
 
 - É Escalavel: O front e o back podem ser desenvolvidos, implantados e escalados de forma independente
-- É Flexibilidad: Outras aplicações (ex: um aplicativo mobile) podem consumir a mesma API no futuro
+- É Flexivel: Outras aplicações (ex: um aplicativo mobile) podem consumir a mesma API no futuro
 - O SPA tem uma navegação mais agradável e rápida, e também não tem a necessidade de recarregar a página inteira all the time.
 
 # 2. Bibliotecas utilizadas
